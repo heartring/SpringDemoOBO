@@ -1,7 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?> <!-- 声明文件类型 版本 及 文件的编码  相关知识点可了解 http://www.w3school.com.cn/xml/index.asp -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- 资料参考 https://www.cnblogs.com/ClassNotFoundException/p/6641867.html
+                 https://blog.csdn.net/changqing5818/article/details/49928231
+         声明 此xml 文件的命名空间 http://maven.apache.org/POM/4.0.0
+                    xml遵循的标签  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              文件遵循的语法  http://maven.apache.org/xsd/maven-4.0.0.xs
+    -->
+
+
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.lx</groupId>
