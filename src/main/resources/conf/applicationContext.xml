@@ -31,7 +31,7 @@
          3.指定mybatis的mapper文件位置
     -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"
-          p:configLocation="classpath:spring-mybatis.xml"
+          p:configLocation="classpath:conf/mybatis-config.xml"
           p:dataSource-ref="pooledDataSource"
           p:mapperLocations="./mappers"
     />
