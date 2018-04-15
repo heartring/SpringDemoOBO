@@ -26,14 +26,14 @@
     <!-- ============  mybatis 的整合配置  =================== -->
 
     <!-- 配置和mybatis 的整合
-        1.配置mybatis全局配置文件
+        1.配置mybatis全局配置文件 , 这个不是必须的, 有些配置或者类型转换 可以写在对应mapper sql文件中
         2.数据源
          3.指定mybatis的mapper文件位置
     -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"
           p:configLocation="classpath:spring-mybatis.xml"
           p:dataSource-ref="pooledDataSource"
-          p:mapperLocations="../mappers"
+          p:mapperLocations="./mappers"
     />
 
     <!-- 配置扫描器, 将mybatis接口的实现加入到ioc容器中
