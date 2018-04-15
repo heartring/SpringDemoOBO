@@ -7,6 +7,72 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
+    <!-- 1. 启动spring容器
+                容器启动时加载的配置文件
+    -->
+    <!-- needed for ContextLoaderListner -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+
+    <!-- 容器启动的监听器 -->
+    <!-- bootstraps the root web application context before -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+
+    <!-- 2. spring mvc的前端控制器, 处理所有请求 -->
+    <!--   如果此servlet 名不是 springDispatcherServlet
+            则需要在web.xml同级有 自定义的 servlet名-serlet.xml 配置文件 -->
+    <servlet>
+        <servlet-name>springDispatcherServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- 容器启动时 立即加载 -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <!-- map all requests to the dispatcherServlet for handler -->
+    <servlet-mapping>
+        <servlet-name>springDispatcherServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <!-- 3.字符编码过滤器
+               放在整个容器的最前
+               请求和相应都强制设置
+    -->
+    <filter>
+        <filter-name>characterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceRequestEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceResponseEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>characterEncodingFilter</filter-name>
+        <url-pattern>/</url-pattern>
+    </filter-mapping>
+
+    <!-- 4. 使用Rest风格 rest风格URI , 将页面普通的post转成指定的方法 -->
+    <filter>
+        <filter-name>hiddenHttpMethodFilter</filter-name>
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>hiddenHttpMethodFilter</filter-name>
+        <url-pattern>/</url-pattern>
+    </filter-mapping>
 
 </web-app>
 
