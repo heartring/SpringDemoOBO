@@ -16,5 +16,135 @@
     <artifactId>SpringDemoOBO</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <springframework.version>5.0.4.RELEASE</springframework.version>
+
+    </properties>
+
+    <dependencies>
+
+
+        <!-- spring的核心代码 , 主要作用:
+                1. spring 框架环境的初始化
+                2. 容器的bean管理
+                3. 表达式解析
+                4. spring aop
+        -->
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+
+        <!-- spring webmvc : (注意 springmvc 和spring 是两个独立项目 只是它们在各自领域都很好,可以理解为强强联手
+                                springmvc 是mvc分层思想 ,集成web应用环境的框架)
+                1.集成springmvc开发框架
+                2.web的相关功能
+        -->
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+
+        <!-- spring 框架本身对持久层的实现 -->
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+
+        <!-- spring 整合 aspectj
+                实现面向切面编程
+         -->
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+
+
+
+        <!-- mybatis 和spring 集成的适配工具 -->
+        <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>1.3.1</version>
+        </dependency>
+
+        <!--mybatis :数据库持久层框架
+        -->
+        <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.4.5</version>
+        </dependency>
+
+        <!-- 数据库连接池 阿里旗下 号称不错 参见: Spring下配置几种常用连接池.pdf
+                https://blog.csdn.net/qq_31125793/article/details/51241943
+            -->
+        <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.6</version>
+        </dependency>
+
+        <!-- mysql 驱动 -->
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>6.0.6</version>
+        </dependency>
+
+        <!-- 项目中会用到的一些工具包 -->
+        <!-- jstl 写jsp是会用到-->
+        <!-- https://mvnrepository.com/artifact/jstl/jstl -->
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <!-- servlet-api  在tomcat容器中有的 但是开发测试会用到
+            如果不引入 jsp页面会报错
+            scope 为 provide 不参与打包部署
+        -->
+        <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- junit 编写测试类 -->
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+
+
+        <!-- 非常好用的字符处理工具类, 可利用反射生成类的toString方法 ,简洁 -->
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.4</version>
+        </dependency>
+
+    </dependencies>
+
 
 </project>
